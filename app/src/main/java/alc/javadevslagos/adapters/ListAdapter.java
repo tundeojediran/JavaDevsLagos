@@ -48,7 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         holder.textView_username.setText(javaDeveloper.getLogin());
 
         Picasso.with(mContext)
-                .load(javaDeveloper.getHtmlUrl())
+                .load(javaDeveloper.getAvatarUrl())
                 .placeholder(R.mipmap.placeholder)
                 .resize(50, 50)
                 .centerCrop()
