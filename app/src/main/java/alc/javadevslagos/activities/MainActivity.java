@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
+      prepareJavaDevelopersList();
+
+
     }
 
 
@@ -110,7 +113,13 @@ public class MainActivity extends AppCompatActivity {
         gitHubAPIResponseCall.enqueue(new Callback<GitHubAPIResponse>() {
             @Override
             public void onResponse(Call<GitHubAPIResponse> call, Response<GitHubAPIResponse> response) {
+
+                String test = String.valueOf(response.body().gettotal_count());
+                Log.d("test", test);
+
+
                 if (response.isSuccessful()) {
+
                     GitHubAPIResponse gitHubAPIResponse = response.body();
                     List<JavaDeveloper> javaDevelopers = gitHubAPIResponse.getItems();
 
