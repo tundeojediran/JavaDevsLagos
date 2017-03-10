@@ -39,6 +39,7 @@ public class DeveloperDetailsActivity extends AppCompatActivity {
 
         username.setText(intent_username);
         link.setText(intent_link);
+
         Picasso.with(getApplicationContext())
                 .load(intent_avatar_url)
                 .placeholder(R.mipmap.placeholder)

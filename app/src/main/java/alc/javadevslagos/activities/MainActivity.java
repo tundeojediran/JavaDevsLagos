@@ -114,11 +114,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GitHubAPIResponse> call, Response<GitHubAPIResponse> response) {
 
-                String test = String.valueOf(response.body().gettotal_count());
-                Log.d("test", test);
+//                String test = String.valueOf(response.body().gettotal_count());
+//                Log.d("test", test);
 
 
                 if (response.isSuccessful()) {
+
+                    swipeRefreshLayout.setRefreshing(false);
+
 
                     GitHubAPIResponse gitHubAPIResponse = response.body();
                     List<JavaDeveloper> javaDevelopers = gitHubAPIResponse.getItems();
