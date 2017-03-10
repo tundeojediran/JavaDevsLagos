@@ -44,7 +44,6 @@ public class DeveloperDetailsActivity extends AppCompatActivity {
                 .load(intent_avatar_url)
                 .placeholder(R.mipmap.placeholder)
                 .resize(80, 80)
-                .centerCrop()
                 .into(circleImageView);
 
         link.setOnClickListener(new View.OnClickListener() {
