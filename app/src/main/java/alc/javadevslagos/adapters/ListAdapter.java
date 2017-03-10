@@ -15,6 +15,7 @@ import java.util.List;
 
 import alc.javadevslagos.R;
 import alc.javadevslagos.models.JavaDeveloper;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dannytee on 10/03/2017.
@@ -61,12 +62,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView textView_username;
-        public ImageView imageView_avatar;
+        public CircleImageView imageView_avatar;
 
         public MyViewHolder(View view) {
             super(view);
             textView_username = (TextView) view.findViewById(R.id.textview_username);
-            imageView_avatar = (ImageView) view.findViewById(R.id.imageview_avatar);
+            imageView_avatar = (CircleImageView) view.findViewById(R.id.imageview_avatar);
         }
     }
 }

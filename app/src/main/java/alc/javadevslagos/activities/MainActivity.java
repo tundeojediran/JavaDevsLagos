@@ -1,5 +1,6 @@
 package alc.javadevslagos.activities;
 
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -133,5 +134,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void showDeveloperDetails(int position) {
 
+        mJavaDeveloper = javaDeveloperArrayList.get(position);
+
+        String username  = mJavaDeveloper.getLogin();
+        String avatarUrl = mJavaDeveloper.getAvatarUrl();
+        String githubLink = mJavaDeveloper.getHtmlUrl();
+
+        Intent detailIntent = new Intent(MainActivity.this, DeveloperDetailsActivity.class);
+        detailIntent.putExtra("username", username);
+        detailIntent.putExtra("avatar_url", avatarUrl);
+        detailIntent.putExtra("link", githubLink);
+        startActivity(detailIntent);
     }
+
 }
