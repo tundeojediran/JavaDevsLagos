@@ -10,7 +10,7 @@ public class GitHubAPIResponse {
 
     private int total_count;
     private boolean incomplete_results;
-    private List<JavaDeveloper> javaDevelopers = null;
+    private List<JavaDeveloper> items = null;
 
     /**
      * No args constructor for use in serialization
@@ -23,7 +23,7 @@ public class GitHubAPIResponse {
         super();
         this.total_count = total_count;
         this.incomplete_results = incomplete_results;
-        this.javaDevelopers = javaDevelopers;
+        this.items = javaDevelopers;
     }
 
     public int gettotal_count() {
@@ -43,11 +43,11 @@ public class GitHubAPIResponse {
     }
 
     public List<JavaDeveloper> getItems() {
-        return javaDevelopers;
+        return items;
     }
 
     public void setItems(List<JavaDeveloper> javaDevelopers) {
-        this.javaDevelopers = javaDevelopers;
+        this.items = javaDevelopers;
     }
 
 }
