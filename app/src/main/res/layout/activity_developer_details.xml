@@ -82,13 +82,16 @@
 
 
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:id="@+id/button_share"
         android:layout_below="@id/textview_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SHARE PROFILE"
-        android:background=""/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_rounded"/>
 
 
 </RelativeLayout>

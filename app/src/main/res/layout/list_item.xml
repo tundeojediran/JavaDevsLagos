@@ -14,7 +14,7 @@
     android:paddingTop="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageview_item"
+        android:id="@+id/imageview_avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@mipmap/placeholder"
@@ -23,7 +23,7 @@
          />
 
     <TextView
-        android:id="@+id/textview_item"
+        android:id="@+id/textview_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight=".9"
