@@ -5,13 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import alc.javadevslagos.R;
 import alc.javadevslagos.models.JavaDeveloper;
@@ -21,7 +19,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by dannytee on 10/03/2017.
  */
 
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>  {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
 
     private ArrayList<JavaDeveloper> javaDeveloperList;
 
@@ -40,8 +38,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         return new MyViewHolder(itemView);
     }
 
-
-
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         JavaDeveloper javaDeveloper = javaDeveloperList.get(position);
@@ -58,18 +54,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     @Override
     public int getItemCount() {
         return javaDeveloperList.size();
-    }
-
-
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
-
-    // Insert a new item to the RecyclerView on a predefined position
-    public void insert(int position, JavaDeveloper javaDeveloper) {
-        javaDeveloperList.add(position, javaDeveloper);
-        notifyItemInserted(position);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

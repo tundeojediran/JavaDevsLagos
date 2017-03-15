@@ -13,8 +13,8 @@ public interface JavaDevsAPI {
 
     /*
        * Retrofit get annotation with URL
-       * And method that will return Java Developers in Lagos.
+       * And method that will return Java Developers in Lagos by page number.
       */
     @GET("users?q=type:users+location:lagos+language:java")
-    Call<GitHubAPIResponse> getDevelopers();
+    Call<GitHubAPIResponse> getDevelopers(@Query("page") int page);
 }

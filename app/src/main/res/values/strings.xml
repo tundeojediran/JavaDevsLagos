@@ -5,4 +5,7 @@
     <string name="github_profile">Github profile</string>
     <string name="username">Username</string>
     <string name="action_reload">Reload</string>
+    <string name="header_title">Java Developers in Lagos</string>
+    <string name="load_more">load more developers</string>
+    <string name="share_profile">SHARE PROFILE</string>
 </resources>
