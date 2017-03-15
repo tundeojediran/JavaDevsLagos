@@ -88,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
 
                 showDeveloperDetails(position);
-                Log.d("position", String.valueOf(position));
-
             }
 
             @Override
