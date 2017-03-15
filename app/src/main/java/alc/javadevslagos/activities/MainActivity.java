@@ -1,16 +1,15 @@
 package alc.javadevslagos.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+//        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+//        itemAnimator.setAddDuration(1000);
+//        recyclerView.setItemAnimator(itemAnimator);
+
         javaDeveloperArrayList = new ArrayList<>();
         listAdapter = new ListAdapter(javaDeveloperArrayList, getApplicationContext());
 
@@ -78,11 +82,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-      prepareJavaDevelopersList();
+        prepareJavaDevelopersList();
 
 
     }
-
 
 
     private void prepareJavaDevelopersList() {
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         // check for network connectivity
         if (!ConnectUtils.isConnected(getApplicationContext())) {
 
-            SnackbarUtils.show(recyclerView.getRootView(), getString(R.string.error_network_connection));
+            SnackbarUtils.show(recyclerView.getRootView(), getString(R.string.error_network_connection), getString(R.string.action_reload), new ReloadListener());
             swipeRefreshLayout.setRefreshing(false);
 
             return;
@@ -98,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         swipeRefreshLayout.setRefreshing(true);
-
 
 
         service = ServiceGenerator.createService(JavaDevsAPI.class);
@@ -148,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         mJavaDeveloper = javaDeveloperArrayList.get(position);
 
-        String username  = mJavaDeveloper.getLogin();
+        String username = mJavaDeveloper.getLogin();
         String avatarUrl = mJavaDeveloper.getAvatarUrl();
         String githubLink = mJavaDeveloper.getHtmlUrl();
 
@@ -158,5 +160,14 @@ public class MainActivity extends AppCompatActivity {
         detailIntent.putExtra("link", githubLink);
         startActivity(detailIntent);
     }
+
+    public class ReloadListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            prepareJavaDevelopersList();
+        }
+    }
+
 
 }

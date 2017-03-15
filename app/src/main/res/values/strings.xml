@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Java Developers In Lagos</string>
-    <string name="error_network_connection">No network connection. Please check your network connection</string>
+    <string name="error_network_connection">Please check your network connection.</string>
     <string name="error_sockettimeout">Network timeout error. Please refresh</string>
+    <string name="github_profile">Github profile</string>
+    <string name="username">Username</string>
+    <string name="action_reload">Reload</string>
 </resources>

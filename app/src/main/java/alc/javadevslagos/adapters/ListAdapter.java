@@ -60,6 +60,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         return javaDeveloperList.size();
     }
 
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    // Insert a new item to the RecyclerView on a predefined position
+    public void insert(int position, JavaDeveloper javaDeveloper) {
+        javaDeveloperList.add(position, javaDeveloper);
+        notifyItemInserted(position);
+    }
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView textView_username;
         public CircleImageView imageView_avatar;
